@@ -10,7 +10,7 @@ export class Tab2Page {
 
   constructor(private router: Router){}
 
-  goHome() {
-    this.router.navigateByUrl('tabs/tab1');
+  goIndex() {
+    this.router.navigateByUrl('tabs/indexGlycemie');
   }
 }

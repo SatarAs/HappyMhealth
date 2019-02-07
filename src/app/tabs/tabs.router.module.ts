@@ -53,6 +53,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'indexGlycemie',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/recherche/recherche.module#RecherchePageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

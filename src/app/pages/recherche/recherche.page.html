@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Indice glycémique</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="searchForm">
+  <ion-item>
+    <ion-label>Catégorie</ion-label>
+    <ion-select formControlName="searchCategory">
+      <ion-select-option *ngFor="let categorie of categoryList | async">{{categorie.label}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Label</ion-label>
+    <ion-input type="text" formControlName="searchLabel" [(ngModel)]="labels" (keyup)="[autoComplete(),search()]"></ion-input>
+  </ion-item>
+
+</form>
+  <!--<p *ngFor="let aliment of alimentList | async">Indice glycémique : {{aliment.IG}}</p>-->
+
+  <ion-item *ngFor="let result of results | async" margin-top="20px">
+    <ion-grid>
+    <ion-row>
+      <ion-col id="labelFav">{{ result.label }}</ion-col>
+      <ion-col id="igFav">{{ result.IG }}</ion-col>
+
+      <ion-col *ngIf="auth.authenticated"><ion-icon name="star" (click)="ajoutFavoris()"></ion-icon></ion-col>
+
+
+    </ion-row>
+    </ion-grid>
+  </ion-item>
+
+
+  
+  <!--<p class="search-result" *ngFor="let result of results | async">
+    {{ result.label }}{{result.IG}}
+  </p>-->
+</ion-content>
