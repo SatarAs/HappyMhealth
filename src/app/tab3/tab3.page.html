@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Mon profil
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content padding>
+  <ion-button (click)="goRegister()">Inscription</ion-button>
+  <ion-button (click)="goLogin()">Connexion</ion-button>
+  <ion-item (click)="logout()" *ngIf="auth.authenticated">
+    <ion-icon name="log-out"></ion-icon>
+    Déconnexion
+  </ion-item>
+</ion-content>

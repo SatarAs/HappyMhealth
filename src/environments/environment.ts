@@ -6,6 +6,17 @@ export const environment = {
   production: false
 };
 
+export const firebaseConfig = {
+  fire: {
+    apiKey: 'AIzaSyA957v3jcVi-llyJIiFR2Q186dpVfakH7A',
+    authDomain: 'happymhealth.firebaseapp.com',
+    databaseURL: 'https://happymhealth.firebaseio.com',
+    projectId: 'happymhealth',
+    storageBucket: 'happymhealth.appspot.com',
+    messagingSenderId: '392224258082'
+  }
+};
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

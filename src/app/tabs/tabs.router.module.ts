@@ -35,6 +35,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'inscription',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/register/register.module#RegisterPageModule'
+          }
+        ]
+      },
+      {
+        path: 'connexion',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/login/login.module#LoginPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
