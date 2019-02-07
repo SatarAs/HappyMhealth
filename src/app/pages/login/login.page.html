@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="login()" [formGroup]="loginForm">
+    <ion-list inset>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+
+    <div padding-horizontal>
+      <div class="form-error">{{loginError}}</div>
+
+      <ion-button type="submit" [disabled]="!loginForm.valid">Connexion</ion-button>
+
+
+
+    </div>
+  </form>
+</ion-content>
