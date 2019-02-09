@@ -1,4 +1,56 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+ion-card{
+
+
+
+
+}
+.img-card ion-img {
+
+  width: 50%;
+  margin: auto;
+  display: block;;
+}
+
+
+ion-card-title{
+  text-align: center;
+  color: #3CDBA4;
+
+
+}
+
+.navbar{
+  background-color: white;
+  text-align: center;
+
+}
+.navbar h1{
+  color: #3CDBA4;
+
+
+
+}
+.navbar img{
+  padding-top: 10px;
+
+
+}
+.contain{
+  margin: auto;
+  text-align: center;
+  background-color: lightgray;
+
+}
+.basket{
+  margin: 250px;
+}
+
+.categorie{
+  background-color: white;
+}
+.contain{
+  background-color: darkgrey;
+}
+img{
+
 }

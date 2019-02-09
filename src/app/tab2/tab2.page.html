@@ -1,9 +1,44 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content padding>
 
-<ion-content></ion-content>
+  <ion-list [lines]="'full'">
+    <ion-list-header>
+      <ion-label>Inscription</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-input placeholder="Prénom">
+
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Nom">
+
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Email" type="required">
+
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label >Date de naissance</ion-label>
+      <ion-datetime display-format="DD MMM, YYYY "></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Mot de passe" type="password">
+
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Confirmation mot de passe" type="password">
+
+      </ion-input>
+    </ion-item>
+
+    <ion-button class="signup" color="" fill="clear" expand="full" >
+      inscription
+    </ion-button>
+
+  </ion-list>
+  <ion-card-subtitle> <a href="connexion">déja inscrit ?</a></ion-card-subtitle>
+</ion-content>
