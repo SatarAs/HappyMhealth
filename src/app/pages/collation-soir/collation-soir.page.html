@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/repas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Collation de soirée</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="collationForm">
+  <ion-item>
+    <ion-label position="floating">Taux de glycémie (mmol/l)</ion-label>
+    <ion-input formControlName="taux" (keyup)="getResult()"></ion-input>
+  </ion-item>
+</form>
+  <ion-item *ngFor="let result of collation | async" [hidden]="!collationForm.value.taux">
+    {{result.repas}}
+  </ion-item>
+
+</ion-content>

@@ -13,4 +13,12 @@ export class Tab2Page {
   goIndex() {
     this.router.navigateByUrl('tabs/indexGlycemie');
   }
+
+  goRepas() {
+    this.router.navigateByUrl('tabs/repas');
+  }
+
+  goRecommandation() {
+    this.router.navigateByUrl('tabs/recommandations');
+  }
 }

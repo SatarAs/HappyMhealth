@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import * as firebase from 'Firebase';
+// import * as firebase from 'Firebase';
 import { ActivatedRoute, Router  } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
-import {snapshotToArray} from '../list-food/list-food.page';
+// import {snapshotToArray} from '../list-food/list-food.page';
 import { FirestoreService } from '../../services/data/firestore.service';
 import { Observable } from 'rxjs';
 import { Aliment } from '../../models/aliment.interface';
@@ -24,7 +24,6 @@ export class RecherchePage implements OnInit {
   results: any;
   public categoryList;
   public alimentList;
-  public favorisList;
   private user: firebase.User;
 
   constructor(public router: Router, private formBuilder: FormBuilder, private firestoreService: FirestoreService, public firestore: AngularFirestore, private auth: AuthService, public loadingCtrl: LoadingController) { this.searchForm = this.formBuilder.group({

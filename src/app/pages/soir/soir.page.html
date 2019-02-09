@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/repas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>soir</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let soir of soirList | async">
+    {{soir.repas}}
+  </ion-item>
+</ion-content>

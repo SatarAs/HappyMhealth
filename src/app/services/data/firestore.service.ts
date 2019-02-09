@@ -9,6 +9,8 @@ import {Collation710} from '../../models/collation7&10.interface';
 import {AuthService} from '../auth.service';
 import {User} from '../../models/user.interface';
 import {ExerciceFaible} from '../../models/exerciceFaible.interface';
+import {Midi} from '../../models/midi.interface';
+import {Soir} from '../../models/soir.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -70,6 +72,14 @@ export class FirestoreService {
 
     getExerciceFaible(): AngularFirestoreCollection<ExerciceFaible> {
         return this.firestore.collection('SportFaible');
+    }
+
+    getMidi(): AngularFirestoreCollection<Midi> {
+        return this.firestore.collection('Midi');
+    }
+
+    getSoir(): AngularFirestoreCollection<Soir> {
+        return this.firestore.collection('Soir');
     }
 
 

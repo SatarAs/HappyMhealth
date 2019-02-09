@@ -1,0 +1,15 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="tabs/repas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Petit déjeuner</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let matin of matinList | async">
+    {{matin.repas}}
+  </ion-item>
+</ion-content>

@@ -62,6 +62,60 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'repas',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/repas/repas.module#RepasPageModule'
+          }
+        ]
+      },
+      {
+        path: 'matin',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/matin/matin.module#MatinPageModule'
+          }
+        ]
+      },
+      {
+        path: 'soir',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/soir/soir.module#SoirPageModule'
+          }
+        ]
+      },
+      {
+        path: 'midi',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/midi/midi.module#MidiPageModule'
+          }
+        ]
+      },
+      {
+        path: 'collation-soirée',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/collation-soir/collation-soir.module#CollationSoirPageModule'
+          }
+        ]
+      },
+      {
+        path: 'recommandations',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/recommandations/recommandations.module#RecommandationsPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
