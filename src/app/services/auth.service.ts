@@ -28,7 +28,8 @@ export class AuthService {
     }
 
     getEmail() {
-        return this.user && this.user.email;
+        return this.user && this.afAuth.auth.currentUser.email;
+
     }
 
     quit(): Promise<void> {

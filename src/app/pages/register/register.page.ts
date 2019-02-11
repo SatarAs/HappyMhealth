@@ -25,7 +25,7 @@ export class RegisterPage implements OnInit {
       password: data.password
     };
     this.auth.signUp(credentials).then(
-      () => this.navCtrl.navigateRoot('/tabs/tab1'),
+      () => this.navCtrl.navigateRoot('/tabs/informations-profil'),
       error => this.signupError = error.message
     );
   }

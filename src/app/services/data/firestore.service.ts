@@ -82,6 +82,18 @@ export class FirestoreService {
         return this.firestore.collection('Soir');
     }
 
+    updatePoids(poids: String) {
+        const id = this.auth.getId();
+
+        return this.firestore.doc(`User/${id}`).update({poids : poids});
+    }
+
+    updateTaille(taille: String) {
+        const id = this.auth.getId();
+
+        return this.firestore.doc(`User/${id}`).update({taille : taille});
+    }
+
 
 
 

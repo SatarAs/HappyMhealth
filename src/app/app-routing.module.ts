@@ -7,7 +7,10 @@ const routes: Routes = [
   { path: 'matin', loadChildren: './pages/matin/matin.module#MatinPageModule' },
   { path: 'midi', loadChildren: './pages/midi/midi.module#MidiPageModule' },
   { path: 'soir', loadChildren: './pages/soir/soir.module#SoirPageModule' },
-  { path: 'recommandations', loadChildren: './pages/recommandations/recommandations.module#RecommandationsPageModule' }
+  { path: 'recommandations', loadChildren: './pages/recommandations/recommandations.module#RecommandationsPageModule' },
+  { path: 'informations-profil', loadChildren: './pages/informations-profil/informations-profil.module#InformationsProfilPageModule' },
+  { path: 'modifier-poids', loadChildren: './pages/modifier-poids/modifier-poids.module#ModifierPoidsPageModule' },
+  { path: 'modifier-taille', loadChildren: './pages/modifier-taille/modifier-taille.module#ModifierTaillePageModule' }
 ];
 @NgModule({
   imports: [

@@ -116,6 +116,33 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'informations-profil',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/informations-profil/informations-profil.module#InformationsProfilPageModule'
+          }
+        ]
+      },
+      {
+        path: 'modifier-poids',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/modifier-poids/modifier-poids.module#ModifierPoidsPageModule'
+          }
+        ]
+      },
+      {
+        path: 'modifier-taille',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/modifier-taille/modifier-taille.module#ModifierTaillePageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
