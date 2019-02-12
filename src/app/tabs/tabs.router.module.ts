@@ -143,6 +143,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'imc',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/imc/imc.module#ImcPageModule'
+          }
+        ]
+      },
+      {
+        path: 'img',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/img/img.module#ImgPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

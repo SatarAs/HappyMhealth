@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calcul IMC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Taille (m)</ion-label>
+    <ion-input placeholder="entrez votre taille" [(ngModel)]="taille"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Poids (kg)</ion-label>
+    <ion-input placeholder="entrez votre poids" [(ngModel)]="poids"></ion-input>
+  </ion-item>
+  <p>{{resultat}}</p>
+  <p>{{corpulence}}</p>
+  <ion-button color="primary" (click)="calculImc()">Calcul</ion-button>
+</ion-content>

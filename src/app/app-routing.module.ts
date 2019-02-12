@@ -10,7 +10,9 @@ const routes: Routes = [
   { path: 'recommandations', loadChildren: './pages/recommandations/recommandations.module#RecommandationsPageModule' },
   { path: 'informations-profil', loadChildren: './pages/informations-profil/informations-profil.module#InformationsProfilPageModule' },
   { path: 'modifier-poids', loadChildren: './pages/modifier-poids/modifier-poids.module#ModifierPoidsPageModule' },
-  { path: 'modifier-taille', loadChildren: './pages/modifier-taille/modifier-taille.module#ModifierTaillePageModule' }
+  { path: 'modifier-taille', loadChildren: './pages/modifier-taille/modifier-taille.module#ModifierTaillePageModule' },
+  { path: 'imc', loadChildren: './pages/imc/imc.module#ImcPageModule' },
+  { path: 'img', loadChildren: './pages/img/img.module#ImgPageModule' }
 ];
 @NgModule({
   imports: [
