@@ -94,6 +94,12 @@ export class FirestoreService {
         return this.firestore.doc(`User/${id}`).update({taille : taille});
     }
 
+    getFavoris() {
+        const email = this.auth.getEmail();
+
+        return this.firestore.collection('Favoris', ref => ref.where('email', '==', email)).valueChanges();
+    }
+
 
 
 

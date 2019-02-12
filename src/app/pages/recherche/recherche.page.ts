@@ -65,7 +65,7 @@ export class RecherchePage implements OnInit {
 
     this.firestoreService.ajoutFavoris(email, nom, ig).then(
       () => {
-        loading.dismiss().then(() => {this.router.navigateByUrl('/recherche');});
+        loading.dismiss().then(() => {this.router.navigateByUrl('tabs/indexGlycemie');});
       },
       error => {
         console.error(error);

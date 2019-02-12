@@ -7,8 +7,11 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-  <ion-card class="profil" *ngIf="auth.authenticated" (click)="getUser()">
+  <ion-card class="profil" *ngIf="auth.authenticated">
     <ion-card-header>
 
       <ion-card-title><img src="../../assets/user.png"> </ion-card-title>
@@ -78,6 +81,20 @@
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="auth.authenticated">
+    <ion-card-header>
+      <ion-card-title>Mes favoris</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item-sliding *ngFor="let fav of favoris | async">
+        <ion-item detail lines="full">{{fav.label}} (IG: {{fav.IG}})</ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="deleteFavoris(fav.id)">Supprimer</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
     </ion-card-content>
   </ion-card>
   <ion-button (click)="goRegister()" *ngIf="!auth.authenticated">Inscription</ion-button>

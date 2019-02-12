@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Informations profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="userForm">
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input formControlName="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prénom</ion-label>
+      <ion-input formControlName="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Date de naissance</ion-label>
+      <ion-datetime formControlName="age"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Poids (kg)</ion-label>
+      <ion-input formControlName="poids"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Taille (m)</ion-label>
+      <ion-input formControlName="taille"></ion-input>
+    </ion-item>
+    <ion-button (click)="ajoutUser()">Valider</ion-button>
+  </form>
+</ion-content>
