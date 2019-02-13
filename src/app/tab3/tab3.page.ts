@@ -15,7 +15,7 @@ import {FirestoreService} from '../services/data/firestore.service';
 export class Tab3Page implements OnInit {
   public user;
   public favoris;
-  private _loading: any;
+  private loading;
 
   constructor (private router: Router, public auth: AuthService, public firestore: AngularFirestore, public loadingCtrl: LoadingController, public firestoreService: FirestoreService, public alertCtrl: AlertController) {
 
@@ -58,6 +58,7 @@ export class Tab3Page implements OnInit {
 
     setTimeout(() => {
       console.log('Async operation has ended');
+      this.ngOnInit();
       event.target.complete();
     }, 2000);
   }
@@ -89,17 +90,17 @@ export class Tab3Page implements OnInit {
    async ngOnInit()  {
 
     while (this.auth.getEmail() == null) {
-      this._loading = await this.loadingCtrl.create({
+      this.loading = await this.loadingCtrl.create({
         message: 'Chargement en cours'
       });
     }
 
-     await this._loading.present();
+     this.loading.present();
      if (this.auth.getEmail() != null) {
 
        this.favoris = this.firestoreService.getFavoris();
        this.user = this.firestore.collection('User', ref => ref.where('email', '==', this.auth.getEmail())).valueChanges();
-       await this._loading.dismiss();
+       await this.loading.dismiss();
 
      }
 

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="tabs/collation-sport"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Sport de moyenne intensite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="sportForm">
+    <ion-item>
+      <ion-label>Sport</ion-label>
+      <ion-select formControlName="sport">
+        <ion-select-option *ngFor="let sports of sportList | async">{{sports.label}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Taux de glycémie avant (mmol/l)</ion-label>
+      <ion-input formControlName="taux" [(ngModel)]="taux"></ion-input>
+    </ion-item>
+    <ion-button (click)="result()">Valider</ion-button>
+  </form>
+  <ion-item *ngFor="let data of result2 | async">
+    <p *ngIf="taux < data.min">Besoin en glucides : {{data.besoin}}</p>
+    <p *ngIf="taux < data.min">{{data.collation}}</p>
+    <p *ngIf="taux > data.mid && taux < data.max">Aucune collation nécéssaire</p>
+    <p *ngIf="taux > 14">Attendre que la glycémie diminue avant de commencer l'exercice</p>
+  </ion-item>
+</ion-content>

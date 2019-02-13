@@ -26,6 +26,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'tab4',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
+          }
+        ]
+      },
+      {
         path: 'tab3',
         children: [
           {
@@ -157,6 +166,42 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../pages/img/img.module#ImgPageModule'
+          }
+        ]
+      },
+      {
+        path: 'collation-sport',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/collation-sport/collation-sport.module#CollationSportPageModule'
+          }
+        ]
+      },
+      {
+        path: 'sport-faible-intensité',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/sport-faible-intensite/sport-faible-intensite.module#SportFaibleIntensitePageModule'
+          }
+        ]
+      },
+      {
+        path: 'sport-intense',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/sport-intense/sport-intense.module#SportIntensePageModule'
+          }
+        ]
+      },
+      {
+        path: 'sport-moyenne-intensité',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/sport-moyenne-intensite/sport-moyenne-intensite.module#SportMoyenneIntensitePageModule'
           }
         ]
       },

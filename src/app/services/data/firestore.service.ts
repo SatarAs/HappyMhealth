@@ -74,6 +74,14 @@ export class FirestoreService {
         return this.firestore.collection('SportFaible');
     }
 
+    getExerciceMoyen() {
+        return this.firestore.collection('SportMoyen');
+    }
+
+    getExerciceIntense () {
+        return this.firestore.collection('SportIntense');
+    }
+
     getMidi(): AngularFirestoreCollection<Midi> {
         return this.firestore.collection('Midi');
     }

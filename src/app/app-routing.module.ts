@@ -12,7 +12,11 @@ const routes: Routes = [
   { path: 'modifier-poids', loadChildren: './pages/modifier-poids/modifier-poids.module#ModifierPoidsPageModule' },
   { path: 'modifier-taille', loadChildren: './pages/modifier-taille/modifier-taille.module#ModifierTaillePageModule' },
   { path: 'imc', loadChildren: './pages/imc/imc.module#ImcPageModule' },
-  { path: 'img', loadChildren: './pages/img/img.module#ImgPageModule' }
+  { path: 'img', loadChildren: './pages/img/img.module#ImgPageModule' },
+  { path: 'collation-sport', loadChildren: './pages/collation-sport/collation-sport.module#CollationSportPageModule' },
+  { path: 'sport-faible-intensite', loadChildren: './pages/sport-faible-intensite/sport-faible-intensite.module#SportFaibleIntensitePageModule' },
+  { path: 'sport-moyenne-intensite', loadChildren: './pages/sport-moyenne-intensite/sport-moyenne-intensite.module#SportMoyenneIntensitePageModule' },
+  { path: 'sport-intense', loadChildren: './pages/sport-intense/sport-intense.module#SportIntensePageModule' }
 ];
 @NgModule({
   imports: [
