@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FirestoreService} from '../../services/data/firestore.service';
+import {LoadingController} from '@ionic/angular';
 
 @Component({
   selector: 'app-soir',
@@ -8,10 +9,18 @@ import {FirestoreService} from '../../services/data/firestore.service';
 })
 export class SoirPage implements OnInit {
   public soirList;
-  constructor(private firestoreService: FirestoreService) { }
+  private loading;
+  constructor(private firestoreService: FirestoreService,
+              private loadingCtrl: LoadingController) { }
 
-  ngOnInit() {
+   async ngOnInit() {
+     this.loading = await this.loadingCtrl.create({
+       message: 'Chargement en cours'
+     });
+
+     this.loading.present();
     this.soirList = this.firestoreService.getSoir().valueChanges();
+     await this.loading.dismiss();
   }
 
 }

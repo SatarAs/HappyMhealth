@@ -2,19 +2,19 @@
 
   <ion-toolbar>
     <ion-buttons>
-      <ion-back-button defaultHref="tabs/tab3"></ion-back-button>
+      <ion-back-button defaultHref="tabs/tab3" [text]="'Retour'"></ion-back-button>
     </ion-buttons>
     <ion-title>Modifier ma taille</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding color="lightgray" class="contain">
   <form [formGroup]="tailleForm">
     <ion-item lines="none">
       <ion-label position="floating">Nouvelle taille (m)</ion-label>
-      <ion-input type="text" formControlName="taille"></ion-input>
+      <ion-input type="number" formControlName="taille"></ion-input>
 
     </ion-item>
-    <ion-button (click)="updateTaille()" [disabled]="!tailleForm.valid">Modifier</ion-button>
+    <ion-button (click)="updateTaille()" [disabled]="!tailleForm.valid" size="full">Modifier</ion-button>
   </form>
 </ion-content>

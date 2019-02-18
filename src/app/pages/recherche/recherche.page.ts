@@ -16,17 +16,21 @@ import { LoadingController, AlertController } from '@ionic/angular';
   styleUrls: ['./recherche.page.scss'],
 })
 export class RecherchePage implements OnInit {
-  // aliments = [];
   searchForm: FormGroup;
-  // ref = firebase.database().ref('aliments/');
   labels;
   ig;
   results: any;
   public categoryList;
   public alimentList;
-  private user: firebase.User;
+  private loading;
+  // private user: firebase.User;
 
-  constructor(public router: Router, private formBuilder: FormBuilder, private firestoreService: FirestoreService, public firestore: AngularFirestore, public auth: AuthService, public loadingCtrl: LoadingController) { this.searchForm = this.formBuilder.group({
+  constructor(public router: Router,
+              private formBuilder: FormBuilder,
+              private firestoreService: FirestoreService,
+              public firestore: AngularFirestore,
+              public auth: AuthService,
+              public loadingCtrl: LoadingController) { this.searchForm = this.formBuilder.group({
     'searchCategory': [null, Validators.required],
     'searchLabel': [null, Validators.required]
   });
@@ -53,9 +57,9 @@ export class RecherchePage implements OnInit {
     return word[0].toUpperCase() + word.substr(1).toLowerCase();
   }
 
-  get authenticated(): boolean {
+  /* get authenticated(): boolean {
     return this.user !== null;
-  }
+  }*/
 
   async ajoutFavoris() {
     const loading = await this.loadingCtrl.create();
@@ -88,8 +92,20 @@ export class RecherchePage implements OnInit {
 
 
 
-  ngOnInit() {
-    this.categoryList = this.firestoreService.getCategoryList().valueChanges();
+   async ngOnInit() {
+
+       this.loading = await this.loadingCtrl.create({
+         message: 'Chargement en cours'
+       });
+
+     this.loading.present();
+
+
+
+
+
+     this.categoryList = this.firestoreService.getCategoryList().valueChanges();
+     await this.loading.dismiss();
 
   }
 
