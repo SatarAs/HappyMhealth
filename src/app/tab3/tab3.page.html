@@ -18,7 +18,7 @@
   <ion-card class="profil" *ngIf="auth.authenticated">
     <ion-card-header>
 
-      <ion-card-title><img src="../../assets/user.png"> </ion-card-title>
+      <ion-card-title><ion-row><ion-col col-4></ion-col><ion-col col-4><img src="../../assets/icon/user.svg"></ion-col><ion-col col-4></ion-col> </ion-row></ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
@@ -88,9 +88,9 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="auth.authenticated">
+  <ion-card *ngIf="auth.authenticated" class="favoris">
     <ion-card-header>
-      <ion-card-title>Mes favoris</ion-card-title>
+      <ion-card-title><ion-row><ion-col col-4></ion-col><ion-col col-4><img src="../../assets/icon/star2.svg"></ion-col><ion-col col-4></ion-col></ion-row></ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item-sliding *ngFor="let fav of favoris | async">
@@ -107,8 +107,5 @@
   <div margin-top="40px">
   <ion-button routerLink="/tabs/connexion" *ngIf="!auth.authenticated" size="large">Connexion</ion-button>
   </div>
-  <ion-item (click)="logout()" *ngIf="auth.authenticated">
-    <ion-icon name="log-out"></ion-icon>
-    Déconnexion
-  </ion-item>
+  <ion-button (click)="logout()" *ngIf="auth.authenticated" size="full">Déconnexion</ion-button>
 </ion-content>
