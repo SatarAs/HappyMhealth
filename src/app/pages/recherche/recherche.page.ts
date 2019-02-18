@@ -26,7 +26,7 @@ export class RecherchePage implements OnInit {
   public alimentList;
   private user: firebase.User;
 
-  constructor(public router: Router, private formBuilder: FormBuilder, private firestoreService: FirestoreService, public firestore: AngularFirestore, private auth: AuthService, public loadingCtrl: LoadingController) { this.searchForm = this.formBuilder.group({
+  constructor(public router: Router, private formBuilder: FormBuilder, private firestoreService: FirestoreService, public firestore: AngularFirestore, public auth: AuthService, public loadingCtrl: LoadingController) { this.searchForm = this.formBuilder.group({
     'searchCategory': [null, Validators.required],
     'searchLabel': [null, Validators.required]
   });

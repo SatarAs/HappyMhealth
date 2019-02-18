@@ -1,15 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/repas"></ion-back-button>
+      <ion-back-button class="back" defaultHref="tabs/repas" [text]="'Retour'" [color]="'#3CDBA4'"></ion-back-button>
     </ion-buttons>
-    <ion-title>Collation de soirée</ion-title>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2> <img  src="../../../assets/icon/milky.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="contain"  color="lightgray">
+
+  <h1>Collation</h1>
+  <ion-row>
+    <ion-col col-4></ion-col><ion-col col-4><img src="../../../assets/icon/milky.svg"  id="basket"></ion-col><ion-col col-4></ion-col>
+  </ion-row>
 <form [formGroup]="collationForm">
-  <ion-item>
+  <ion-item lines="none">
     <ion-label position="floating">Taux de glycémie (mmol/l)</ion-label>
     <ion-input formControlName="taux" (keyup)="getResult()"></ion-input>
   </ion-item>
