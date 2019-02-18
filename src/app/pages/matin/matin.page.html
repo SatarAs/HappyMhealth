@@ -16,7 +16,7 @@
 
 <ion-content padding color="lightgray">
   <h1>Idées petit déjeuner</h1>
-
+<div class="main">
   <ion-card class="recette1-card" *ngFor="let matin of matinList | async">
     <ion-card-content>
       <ion-card-subtitle></ion-card-subtitle>
@@ -24,4 +24,5 @@
     </ion-card-content>
 
   </ion-card>
+</div>
 </ion-content>

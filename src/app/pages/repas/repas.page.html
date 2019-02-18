@@ -15,9 +15,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding class="contain" color="darkgrey">
+<ion-content padding class="contain" color="lightgrey">
 
-  <ion-card (click)="getMatin()">
+  <ion-card routerLink="/tabs/matin">
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title><h1>Matin</h1></ion-card-title>
@@ -30,7 +30,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="getMidi()">
+  <ion-card routerLink="/tabs/midi">
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title><h1>Midi</h1></ion-card-title>
@@ -44,7 +44,7 @@
   </ion-card>
 
 
-  <ion-card (click)="getSoir()">
+  <ion-card routerLink="/tabs/soir">
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title><h1>Soir</h1></ion-card-title>
@@ -57,7 +57,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="getCollation()">
+  <ion-card routerLink="/tabs/collation-soirée">
     <ion-card-header>
       <ion-card-subtitle></ion-card-subtitle>
       <ion-card-title><h1>Collation de soirée</h1></ion-card-title>

@@ -25,7 +25,7 @@
       <ion-select-option *ngFor="let categorie of categoryList | async">{{categorie.label}}</ion-select-option>
     </ion-select>
   </ion-item>
-  <ion-item>
+  <ion-item lines="none">
     <ion-label position="floating">Label</ion-label>
     <ion-input type="text" formControlName="searchLabel" [(ngModel)]="labels" (keyup)="[autoComplete(),search()]"></ion-input>
   </ion-item>
@@ -33,7 +33,7 @@
 </form>
 
 
-  <ion-item *ngFor="let result of results | async" margin-top="20px">
+  <ion-item *ngFor="let result of results | async" margin-top="20px" [hidden]="!searchForm.value.searchLabel">
     <ion-grid>
     <ion-row>
       <ion-col id="labelFav">{{ result.label }}</ion-col>

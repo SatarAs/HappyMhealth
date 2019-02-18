@@ -1,12 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Mon profil
-    </ion-title>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../assets/icon/resume.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="contain" color="lightgrey">
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
@@ -97,8 +101,12 @@
       </ion-item-sliding>
     </ion-card-content>
   </ion-card>
-  <ion-button (click)="goRegister()" *ngIf="!auth.authenticated">Inscription</ion-button>
-  <ion-button (click)="goLogin()" *ngIf="!auth.authenticated">Connexion</ion-button>
+  <div margin-top="40px">
+  <ion-button routerLink="/tabs/inscription" *ngIf="!auth.authenticated" size="large">Inscription</ion-button>
+  </div>
+  <div margin-top="40px">
+  <ion-button routerLink="/tabs/connexion" *ngIf="!auth.authenticated" size="large">Connexion</ion-button>
+  </div>
   <ion-item (click)="logout()" *ngIf="auth.authenticated">
     <ion-icon name="log-out"></ion-icon>
     Déconnexion

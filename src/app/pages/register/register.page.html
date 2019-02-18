@@ -1,10 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Inscription</ion-title>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../../assets/icon/resume.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="contain" color="lightgrey">
+  <h1>Inscription</h1>
+  <ion-img src="../../../assets/icon/logo.png"></ion-img>
   <form (ngSubmit)="signup()" [formGroup]="form">
     <ion-list inset>
 
@@ -24,7 +32,7 @@
     <div padding-horizontal>
       <div class="form-error">{{signupError}}</div>
 
-      <ion-button type="submit" [disabled]="!form.valid">S'inscrire</ion-button>
+      <ion-button type="submit" [disabled]="!form.valid" size="full">S'inscrire</ion-button>
     </div>
   </form>
 </ion-content>

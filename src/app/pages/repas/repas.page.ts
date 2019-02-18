@@ -8,23 +8,8 @@ import {Router} from '@angular/router';
 })
 export class RepasPage implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor() { }
 
-  getMatin() {
-    this.router.navigateByUrl('tabs/matin');
-  }
-
-  getMidi() {
-    this.router.navigateByUrl('tabs/midi');
-  }
-
-  getSoir() {
-    this.router.navigateByUrl('tabs/soir');
-  }
-
-  getCollation() {
-    this.router.navigateByUrl('tabs/collation-soirée');
-  }
   ngOnInit() {
   }
 

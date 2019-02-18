@@ -1,19 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Calcul IMC</ion-title>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2> <img  src="../../../assets/icon/image.png" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding color="lightgrey" class="contain">
+  <h1>Calculez votre IMC</h1>
+  <div class="main">
   <ion-item>
     <ion-label>Taille (m)</ion-label>
     <ion-input placeholder="entrez votre taille" [(ngModel)]="taille"></ion-input>
   </ion-item>
-  <ion-item>
+  <ion-item lines="none">
     <ion-label>Poids (kg)</ion-label>
     <ion-input placeholder="entrez votre poids" [(ngModel)]="poids"></ion-input>
   </ion-item>
   <p>{{resultat}}</p>
   <p>{{corpulence}}</p>
-  <ion-button color="primary" (click)="calculImc()">Calcul</ion-button>
+  <ion-button color="primary" (click)="calculImc()" size="full">Calcul</ion-button>
+  </div>
 </ion-content>

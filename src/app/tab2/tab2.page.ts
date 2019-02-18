@@ -8,17 +8,6 @@ import {Router} from '@angular/router';
 })
 export class Tab2Page {
 
-  constructor(private router: Router){}
+  constructor() {}
 
-  goIndex() {
-    this.router.navigateByUrl('tabs/indexGlycemie');
-  }
-
-  goRepas() {
-    this.router.navigateByUrl('tabs/repas');
-  }
-
-  goRecommandation() {
-    this.router.navigateByUrl('tabs/recommandations');
-  }
 }
