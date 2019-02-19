@@ -15,6 +15,7 @@ import {FirestoreService} from '../services/data/firestore.service';
 export class Tab3Page implements OnInit {
     public user;
     public favoris;
+    public glycemie;
     private loading;
 
     constructor(private router: Router,
@@ -86,19 +87,44 @@ export class Tab3Page implements OnInit {
         await alert.present();
     }
 
+    async deleteSuivi(id: String) {
+        const alert = await this.alertCtrl.create({
+            header: 'Confirmation',
+            message: 'Etes vous sur de vouloir supprimer cet élément ?',
+            buttons: [
+                {
+                    text: 'Annuler',
+                    role: 'cancel',
+                    cssClass: 'secondary',
+                    handler: (blah) => {
+                        console.log('cancel');
+                    }
+                }, {
+                    text: 'Oui',
+                    handler: () => {
+                        this.firestore.doc(`Glycemie/${id}`).delete();
+                    }
+                }
+            ]
+        });
+
+        await alert.present();
+    }
+
     async ngOnInit() {
 
          while (this.auth.getEmail() == null) {
-        this.loading = await this.loadingCtrl.create({
+             this.loading = await this.loadingCtrl.create({
             message: 'Chargement en cours'
         });
         }
 
-        this.loading.present();
+        // await this.loading.present();
 
         this.favoris = this.firestoreService.getFavoris();
+        this.glycemie = this.firestoreService.getGlycemie();
         this.user = this.firestore.collection('User', ref => ref.where('email', '==', this.auth.getEmail())).valueChanges();
-        await this.loading.dismiss();
+          // return await this.loading.dismiss();
 
          }
 

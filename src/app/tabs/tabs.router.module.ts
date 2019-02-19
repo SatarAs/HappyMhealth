@@ -170,6 +170,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'ajout-glycemie',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/ajout-glycemie/ajout-glycemie.module#AjoutGlycemiePageModule'
+          }
+        ]
+      },
+      {
+        path: 'suivi-glycemie',
+        children: [
+          {
+            path: '',
+            loadChildren: '../pages/suivi-glycemie/suivi-glycemie.module#SuiviGlycemiePageModule'
+          }
+        ]
+      },
+      {
         path: 'collation-sport',
         children: [
           {

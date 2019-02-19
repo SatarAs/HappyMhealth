@@ -90,6 +90,26 @@
 
   <ion-card *ngIf="auth.authenticated" class="favoris">
     <ion-card-header>
+      <ion-card-title><ion-row><ion-col col-4></ion-col><ion-col col-4><img src="../../assets/icon/tint-drop.svg"></ion-col><ion-col col-4></ion-col></ion-row></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item-sliding *ngFor="let glycemies of glycemie | async">
+        <ion-item detail lines="full">
+          {{glycemies.date | date: 'dd/MM/yyyy'}}&nbsp; {{glycemies.heure}} &nbsp;{{glycemies.taux}}mmol/l
+
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="deleteSuivi(glycemies.id)">Supprimer</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+      <ion-row><ion-col><ion-button routerLink="/tabs/ajout-glycemie">Ajouter</ion-button></ion-col><ion-col><ion-button routerLink="/tabs/suivi-glycemie">Voir plus</ion-button></ion-col></ion-row>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card *ngIf="auth.authenticated" class="favoris">
+    <ion-card-header>
       <ion-card-title><ion-row><ion-col col-4></ion-col><ion-col col-4><img src="../../assets/icon/star2.svg"></ion-col><ion-col col-4></ion-col></ion-row></ion-card-title>
     </ion-card-header>
     <ion-card-content>

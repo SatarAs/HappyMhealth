@@ -11,6 +11,7 @@ import {User} from '../../models/user.interface';
 import {ExerciceFaible} from '../../models/exerciceFaible.interface';
 import {Midi} from '../../models/midi.interface';
 import {Soir} from '../../models/soir.interface';
+import {Time} from '@angular/common';
 
 @Injectable({
     providedIn: 'root'
@@ -106,6 +107,22 @@ export class FirestoreService {
         const email = this.auth.getEmail();
 
         return this.firestore.collection('Favoris', ref => ref.where('email', '==', email)).valueChanges();
+    }
+
+    ajoutGlycemie( date: Date, email: String, heure: Time, taux: String ) {
+        const id = this.firestore.createId();
+
+        return this.firestore.doc(`Glycemie/${id}`).set({
+            id, date, email , heure, taux
+        });
+    }
+
+    getGlycemie() {
+        return this.firestore.collection('Glycemie', ref => ref.where('email', '==', this.auth.getEmail()).limit(5)).valueChanges();
+    }
+
+    getGlycemieFull() {
+        return this.firestore.collection('Glycemie', ref => ref.where('email', '==', this.auth.getEmail())).valueChanges();
     }
 
 
