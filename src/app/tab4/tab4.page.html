@@ -1,15 +1,72 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>
-            Sport
-        </ion-title>
-
+        <ion-row>
+            <ion-col col-5></ion-col>
+            <ion-title>
+                <ion-col col-2><img src="../../assets/icon/running.svg" width="20%"></ion-col>
+            </ion-title>
+            <ion-col col-5></ion-col>
+        </ion-row>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-card (click)="goCollation()">
+<ion-content padding class="contain" color="lightgray">
+
+
+    <ion-card *ngIf="data != null">
+        <ion-card-header>
+            <ion-card-title><ion-row>
+                <ion-col col-4></ion-col> <ion-col col-4><img  src="../../assets/icon/step.svg"  ></ion-col><ion-col col-4></ion-col>
+            </ion-row></ion-card-title>
+        </ion-card-header>
         <ion-card-content>
+            {{data.numberOfSteps}}
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="data != null">
+        <ion-card-header>
+            <ion-card-title><ion-row>
+                <ion-col col-4></ion-col> <ion-col col-4><img  src="../../assets/icon/stopwatch.svg"  ></ion-col><ion-col col-4></ion-col>
+            </ion-row></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            {{time.toDate() | date: 'mm'}}mn
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="data == null">
+        <ion-card-header>
+            <ion-card-title><ion-row>
+                <ion-col col-4></ion-col> <ion-col col-4><img  src="../../assets/icon/step.svg"  ></ion-col><ion-col col-4></ion-col>
+            </ion-row></ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="glycemie-card ion-text-center" >
+            2000
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="data == null">
+        <ion-card-header>
+            <ion-card-title><ion-row>
+                <ion-col col-4></ion-col> <ion-col col-4><img  src="../../assets/icon/stopwatch.svg"  ></ion-col><ion-col col-4></ion-col>
+            </ion-row></ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="glycemie-card ion-text-center" >
+            30mn
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card routerLink="/tabs/collation-sport">
+        <ion-card-header>
+            <ion-card-title><ion-row>
+                <ion-col col-4></ion-col> <ion-col col-4><img  src="../../assets/icon/apple-juice.svg"  ></ion-col><ion-col col-4></ion-col>
+            </ion-row></ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="glycemie-card ion-text-center" >
             Collation post-exercice
         </ion-card-content>
     </ion-card>

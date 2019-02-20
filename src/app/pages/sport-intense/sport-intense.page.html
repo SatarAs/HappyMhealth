@@ -1,13 +1,20 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons>
-      <ion-back-button defaultHref="tabs/collation-sport"></ion-back-button>
+      <ion-back-button defaultHref="tabs/collation-sport" [text]="'Retour'" [color]="'#3CDBA4'" class="back"></ion-back-button>
     </ion-buttons>
-    <ion-title>Sport intense</ion-title>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../../assets/icon/football.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="contain" color="lightgray">
+  <div class="main">
   <form [formGroup]="sportForm">
     <ion-item>
       <ion-label>Sport</ion-label>
@@ -15,21 +22,23 @@
         <ion-select-option *ngFor="let sports of sportList | async">{{sports.label}}</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item>
+    <ion-item lines="none">
       <ion-label position="floating">Taux de glycémie avant (mmol/l)</ion-label>
-      <ion-input formControlName="taux" [(ngModel)]="taux"></ion-input>
+      <ion-input formControlName="taux" [(ngModel)]="taux" (keyup)="result()"></ion-input>
     </ion-item>
-    <ion-button (click)="result()">Valider</ion-button>
   </form>
-  <ion-item *ngFor="let data of result2 | async">
+    <div class="result">
+  <ion-item *ngFor="let data of result2 | async" [hidden]="!sportForm.value.taux">
     <p *ngIf="taux < data.min">Besoin en glucides : {{data.besoin1}}</p>
-    <p *ngIf="taux < data.min">{{data.collation1}}</p>
-
     <p *ngIf="taux > data.minB2 && taux < data.maxB2">Besoin en glucides : {{data.besoin2}}</p>
-    <p *ngIf="taux > data.minB2 && taux < data.maxB2">{{data.collation2}}</p>
-
     <p *ngIf="taux > data.minB3 && taux < data.maxB3">Besoin en glucides : {{data.besoin3}}</p>
-    <p *ngIf="taux > data.minB3 && taux < data.maxB3">{{data.collation3}}</p>
     <p *ngIf="taux > 14">Attendre que la glycémie diminue avant de commencer l'exercice</p>
   </ion-item>
+      <ion-item *ngFor="let data of result2 | async" [hidden]="!sportForm.value.taux" lines="none">
+        <p *ngIf="taux < data.min">{{data.collation1}}</p>
+        <p *ngIf="taux > data.minB2 && taux < data.maxB2">{{data.collation2}}</p>
+        <p *ngIf="taux > data.minB3 && taux < data.maxB3">{{data.collation3}}</p>
+      </ion-item>
+    </div>
+  </div>
 </ion-content>

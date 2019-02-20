@@ -10,17 +10,6 @@ export class CollationSportPage implements OnInit {
 
   constructor(private router: Router) { }
 
-  sportFaible() {
-    this.router.navigateByUrl('tabs/sport-faible-intensité');
-  }
-
-  sportMoyen() {
-    this.router.navigateByUrl('tabs/sport-moyenne-intensité');
-  }
-
-  sportIntense() {
-    this.router.navigateByUrl('tabs/sport-intense');
-  }
   ngOnInit() {
   }
 
