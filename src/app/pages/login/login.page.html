@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2> <img  src="../../../assets/icon/login.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="contain" color="lightgrey">
+  <h1>Connexion</h1>
+  <ion-img src="../../../assets/icon/logo.png"></ion-img>
+  <form (ngSubmit)="login()" [formGroup]="loginForm">
+    <ion-list inset>
+
+      <ion-item>
+        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-input type="password" placeholder="Mot de passe" formControlName="password"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+
+    <div padding-horizontal>
+      <div class="form-error">{{loginError}}</div>
+
+      <ion-button type="submit" [disabled]="!loginForm.valid" size="full">Connexion</ion-button>
+
+
+
+    </div>
+  </form>
+</ion-content>

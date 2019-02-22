@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button class="back" defaultHref="tabs/repas" [text]="'Retour'" [color]="'#3CDBA4'"></ion-back-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2> <img  src="../../../assets/icon/serving-dish.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="lightgray">
+  <h1>Idées diner</h1>
+  <div class="main">
+  <ion-card class="recette1-card" *ngFor="let soir of soirList | async">
+    <ion-card-content>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title>{{soir.repas}}</ion-card-title>
+    </ion-card-content>
+
+  </ion-card>
+  </div>
+</ion-content>

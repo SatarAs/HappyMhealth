@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2> <img  src="../../../assets/icon/diet.png" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="contain"  color="lightgray">
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+          <h1>Vous pouvez manger</h1>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col>
+            <ion-card  (click)="voir()">
+
+                <ion-card-content>
+                  Oméga-3 d'origine marine
+
+                </ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+            </ion-card>
+            <div [innerHTML]="paragraphe"></div>
+
+
+            <ion-card  (click)="voir2()">
+              <ion-card-content>Fibres alimentaires solubles</ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+            </ion-card>
+            <div [innerHTML]="paragraphe2"></div>
+            <ion-card (click)="voir3()">
+              <ion-card-content>Antioxydants</ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+            </ion-card>
+            <div [innerHTML]="paragraphe3"></div>
+            <ion-card (click)="voir4()">
+              <ion-card-content>Glucides à indice glycémique faible (<55)</ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+            </ion-card>
+            <div [innerHTML]="paragraphe4"></div>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+
+
+
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h1>Aliments interdits</h1>
+          </ion-col>
+        </ion-row>
+
+      <ion-row>
+        <ion-col>
+
+            <ion-card (click)="voir5()">
+              <ion-card-content>
+                Sucres ajoutés
+              </ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+
+            </ion-card>
+          <div [innerHTML]="paragraphe5"></div>
+            <ion-card  (click)="voir6()" text-wrap>
+              <ion-card-content>
+              Acide gras saturés
+              </ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+            </ion-card>
+          <div [innerHTML]="paragraphe6"></div>
+            <ion-card (click)="voir7()">
+              <ion-card-content>
+                Aliments industriels
+              </ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+            </ion-card>
+          <div [innerHTML]="paragraphe7"></div>
+            <ion-card (click)="voir8()">
+              <ion-card-content>
+                Alcool
+              </ion-card-content>
+              <ion-icon name="arrow-down" style="font-size: 1.5rem;color: #3CDBA4"></ion-icon>
+            </ion-card>
+          <div [innerHTML]="paragraphe8"></div>
+
+        </ion-col>
+
+      </ion-row>
+      </ion-grid>
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

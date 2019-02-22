@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button [text]="'Retour'" [color]="'#3CDBA4'" class="back" defaultHref="tabs/tab3"></ion-back-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../../assets/icon/tint-drop.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="contain" color="lightgray">
+  <h1>Taux de glycémie</h1>
+  <div class="main">
+<form [formGroup]="glycemieForm">
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime formControlName="date" monthNames="Janvier,Février,Mars,Avril,Mai,Juin,Juillet,Aout,Septembre,Octobre,Novembre,Décembre" pickerFormat="DD MMMM YYYY" displayFormat="DD MMMM YYYY"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Heure</ion-label>
+    <ion-datetime formControlName="heure" pickerFormat="HH:mm" displayFormat="HH:mm"></ion-datetime>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label position="floating">Taux de glycémie (mmol/l)</ion-label>
+    <ion-input type="number" formControlName="taux"></ion-input>
+  </ion-item>
+  <ion-button size="full" (click)="ajoutTauxGlycemie()" [disabled]="!glycemieForm.valid" margin-top="20px">Ajouter</ion-button>
+</form>
+  </div>
+</ion-content>

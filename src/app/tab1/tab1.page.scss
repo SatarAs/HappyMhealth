@@ -1,4 +1,19 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
+.contain {
+  background-color: lightgray;
 }
+
+ion-card {
+  background-color: white;
+}
+
+ion-card-title {
+  color: #42403F;
+  text-align: center;
+}
+
+.outils {
+  text-align: center;
+}
+ ion-button {
+   width: 100%;
+ }

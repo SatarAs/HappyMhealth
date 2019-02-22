@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../../assets/icon/resume.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="contain" color="lightgrey">
+  <h1>Inscription</h1>
+  <ion-img src="../../../assets/icon/logo.png"></ion-img>
+  <form (ngSubmit)="signup()" [formGroup]="form">
+    <ion-list inset>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+      </ion-item>
+
+
+
+      <ion-item>
+        <ion-input type="password" placeholder="Mot de passe" formControlName="password"></ion-input>
+      </ion-item>
+
+
+    </ion-list>
+
+    <div padding-horizontal>
+      <div class="form-error">{{signupError}}</div>
+
+      <ion-button type="submit" [disabled]="!form.valid" size="full">S'inscrire</ion-button>
+    </div>
+  </form>
+</ion-content>
