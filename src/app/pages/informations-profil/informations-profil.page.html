@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../../assets/icon/curriculum.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="contain" color="lightgray">
+  <h1>Informations supplémentaires</h1>
+  <div class="main">
+  <form [formGroup]="userForm">
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" formControlName="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Prénom</ion-label>
+      <ion-input type="text" formControlName="prenom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Date de naissance</ion-label>
+      <ion-datetime formControlName="age"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Poids (kg)</ion-label>
+      <ion-input formControlName="poids"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="floating">Taille (m)</ion-label>
+      <ion-input formControlName="taille"></ion-input>
+    </ion-item>
+    <ion-button (click)="ajoutUser()" size="full" [disabled]="!userForm.valid" margin-top="20px">Valider</ion-button>
+  </form>
+  </div>
+</ion-content>

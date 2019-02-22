@@ -1,30 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Repas
-    </ion-title>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../assets/icon/fork.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
+<ion-content class="contain" color="darkgrey">
+  <ion-card routerLink="/tabs/indexGlycemie">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title><h1>Indice glycémique</h1></ion-card-title>
+    </ion-card-header>
 
-    <ion-card (click)="goHome()">
-      <ion-card-title><ion-icon name="nutrition"></ion-icon></ion-card-title>
-      <ion-card-content>Vérifier l'indice glycémique d'un aliment</ion-card-content>
-    </ion-card>
-  </ion-item>
-  <ion-item>
-    <ion-card>
-      <ion-card-title><ion-icon name="nutrition"></ion-icon></ion-card-title>
-      <ion-card-content>Obtenir des conseils</ion-card-content>
-    </ion-card>
-  </ion-item>
-  <ion-item>
-    <ion-card>
-      <ion-card-title><ion-icon name="nutrition"></ion-icon></ion-card-title>
-      <ion-card-content>Recommandations</ion-card-content>
-    </ion-card>
-  </ion-item>
+    <ion-card-content class="glycemie-card ion-text-center" >
+      <ion-row>
+        <ion-col col-4></ion-col> <ion-col col-4><img  src="../../assets/icon/calorie.png"  ></ion-col><ion-col col-4></ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card routerLink="/tabs/repas">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title><h1>Idées repas</h1></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="recettes-card">
+      <ion-row>
+        <ion-col col-4></ion-col><ion-col col-4><img src="../../assets/icon/icon.png"></ion-col><ion-col col-4></ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card routerLink="/tabs/recommandations">
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title><h1>Conseils</h1></ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="conseil-card">
+      <ion-row>
+        <ion-col col-4></ion-col><ion-col col-4><img src="../../assets/icon/diet.png"></ion-col><ion-col col-4></ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

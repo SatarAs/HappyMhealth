@@ -1,21 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      HappyMhealth
-    </ion-title>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../assets/icon/home.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="contain" color="lightgray">
     <ion-card class="welcome-card">
 
       <ion-card-header>
         <ion-card-subtitle>{{currentDate | date: 'dd/MM/yyyy'}}</ion-card-subtitle>
-        <ion-card-title>Résumé de la journée</ion-card-title>
+        <ion-card-title>Bienvenue sur Diab'Health !</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+        <p>Cette application a pour but de vous aider à suivre votre régime alimentaire spécial. Vous pouvez aussi
+        avoir des informations sur votre activité sportive. Si vous créez un compte vous pourrez enregistrer des favoris ainsi qu'avoir
+        un suivi de votre taux de glycémie.</p>
       </ion-card-content>
     </ion-card>
+
+    <div class="outils">
+      <ion-button routerLink="/tabs/imc">Calculer votre indice de masse corporelle</ion-button>
+      <ion-button routerLink="/tabs/img">Calculer votre indice de masse grasse</ion-button>
+    </div>
 
 </ion-content>

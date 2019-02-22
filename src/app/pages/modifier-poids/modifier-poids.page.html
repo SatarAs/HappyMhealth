@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="tabs/tab3" [text]="'Retour'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modifier mon poids</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="lightgray" class="contain">
+<form [formGroup]="poidsForm">
+  <ion-item lines="none">
+  <ion-label position="floating">Nouveau poids (kg)</ion-label>
+  <ion-input type="number" formControlName="poids"></ion-input>
+
+  </ion-item>
+  <ion-button (click)="updatePoids()" [disabled]="!poidsForm.valid" size="full">Modifier</ion-button>
+</form>
+</ion-content>

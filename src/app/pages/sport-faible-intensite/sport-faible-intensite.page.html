@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="tabs/collation-sport" [text]="'Retour'" [color]="'#3CDBA4'" class="back"></ion-back-button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2><img src="../../../assets/icon/pedestrian-walking.svg" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="contain" color="lightgray">
+  <div class="main">
+  <form [formGroup]="sportForm">
+    <ion-item>
+      <ion-label>Sport</ion-label>
+      <ion-select formControlName="sport">
+        <ion-select-option *ngFor="let sports of sportList | async">{{sports.label}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="floating">Taux de glycémie avant (mmol/l)</ion-label>
+      <ion-input formControlName="taux" [(ngModel)]="taux" (keyup)="result()"></ion-input>
+    </ion-item>
+
+  </form>
+    <div class="result">
+  <ion-item *ngFor="let data of result2 | async" [hidden]="!sportForm.value.taux">
+    <p *ngIf="taux < data.mid && taux > data.min">Besoin en glucides : {{data.besoin}}</p>
+    <p *ngIf="taux > data.max">Aucune collation nécéssaire</p>
+  </ion-item>
+    <ion-item *ngFor="let data of result2 | async" [hidden]="!sportForm.value.taux" lines="none">
+      <p *ngIf="taux < data.mid && taux > data.min">{{data.collation}}</p>
+    </ion-item>
+    </div>
+  </div>
+</ion-content>

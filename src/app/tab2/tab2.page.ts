@@ -8,9 +8,6 @@ import {Router} from '@angular/router';
 })
 export class Tab2Page {
 
-  constructor(private router: Router){}
+  constructor() {}
 
-  goHome() {
-    this.router.navigateByUrl('tabs/tab1');
-  }
 }

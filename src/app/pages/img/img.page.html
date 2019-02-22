@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col col-5></ion-col>
+      <ion-title>
+        <ion-col col-2> <img  src="../../../assets/icon/image.png" width="20%"></ion-col>
+      </ion-title>
+      <ion-col col-5></ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="lightgrey" class="contain">
+  <h1>Calculez votre IMG</h1>
+  <div class="main">
+  <ion-item>
+  <ion-label position="floating">IMC</ion-label>
+  <ion-input [(ngModel)]="imcUser"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Age</ion-label>
+  <ion-input [(ngModel)]="ageImg"></ion-input>
+  </ion-item>
+  <ion-item lines="none">
+  <ion-label>Genre</ion-label>
+  <ion-select placeholder="Sélectionner" [(ngModel)]="sexe">
+    <ion-select-option value="0">Femme</ion-select-option>
+    <ion-select-option value="1">Homme</ion-select-option>
+  </ion-select>
+  </ion-item>
+  <ion-button (click)="calculImg()" id="button" size="full">Calcul</ion-button>
+  </div>
+
+  <p *ngIf="img!=null"> {{img}}%</p>
+  <p *ngIf="result!=null">{{result}}</p>
+</ion-content>
